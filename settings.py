@@ -44,6 +44,25 @@ ACCOUNTS_PROFILE_VIEWS_ENABLED = True
 ALLOWED_DUPLICATE_LINK_HOURS = 24 * 7 * 3
 ITEMS_PER_PAGE = 20
 
+SECRET_KEY = "mysupersecret!!11one"
+
+DATABASES = {
+    "default": {
+        # Ends with "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        # DB name or path to database file if using sqlite3.
+        "NAME": os.getenv("DB_NAME"),
+        # Not used with sqlite3.
+        "USER": os.getenv("DB_USER"),
+        # Not used with sqlite3.
+        "PASSWORD": os.getenv("DB_PASSWORD"),
+        # Set to empty string for localhost. Not used with sqlite3.
+        "HOST": os.getenv("DB_HOST"),
+        # Set to empty string for default. Not used with sqlite3.
+        "PORT": "",
+    }
+}
+
 try:
     from local_settings import *
 except ImportError:
