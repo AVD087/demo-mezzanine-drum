@@ -46,6 +46,8 @@ ITEMS_PER_PAGE = 20
 
 SECRET_KEY = "mysupersecret!!11one"
 
+ALLOWED_HOSTS = [os.getenv("DOMAIN")]
+
 DATABASES = {
     "default": {
         # Ends with "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
